@@ -1,0 +1,32 @@
+JPA:
+- Java Persistence API
+- Deals with the data
+- Tells the specification how to manipulate java objects with SQL data.
+- JPA implementation is given by:
+	- Hibernate [Mostly Used].
+	- Open JPA
+	- Eclipse Link
+- JPA provides two important interfaces:
+	- EntityManagerFactory
+	- EntityManager
+		- Provides implementation for:
+			- Create
+			- Update
+			- Read
+			- Delete
+	- Object of EntityManager is given by EntityManagerFactory
+	- How to use JPA in Spring Boot?
+		- Add the dependency spring-boot-starter-data-jpa
+		- Adding the above dependency will automatically configure JPA to use in the application.
+
+	- How to save actual object in database after adding dependency for JPA?
+		- Create UserRepository Interface (Same as DAO)
+		- Spring provides an interface called CRUDRepositroy which our UserRepository will extend.
+		- CRUDRepository interface will provide all the functionalities to deal with data.
+		- If you do not want to work with CRUDRepository, then you can also use JPARepository.
+		- JPARepository provides extra functionalities as compared to CRUDRepository
+		- Hierarchical order of the UserRepository, CRUDRepository and JPARepository is as follows:
+			- UserRepository extends JPARepository extends CRUDRepository
+		[Here, UserRepository can be any ObjectRepository for your application like EmployeeRepository, etc.]
+	
+	
